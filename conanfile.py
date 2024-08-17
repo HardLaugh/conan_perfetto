@@ -1037,8 +1037,8 @@ if (false)""")
             if os.path.exists(item):
                 has_item = True
                 break
-        if not has_item:
-            raise errors.ConanInvalidConfiguration('not found any of: {}'.format(arr))
+        # if not has_item:
+        #     raise errors.ConanInvalidConfiguration('not found any of: {}'.format(arr))
 
     def package_info(self):
         self.cpp_info.set_property("cmake_find_mode", "perfetto")

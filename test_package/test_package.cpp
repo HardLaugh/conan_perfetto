@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <codecvt>
 #include <random>
+#include <memory>
 
 #include <sys/stat.h>
 #include <fcntl.h>
