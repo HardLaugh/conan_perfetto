@@ -131,7 +131,7 @@ void OnNewRequest(size_t request_id) {
   TRACE_EVENT_BEGIN("category", "HandleRequest", perfetto::Track(track_id));
 
   // Start a thread to handle the request.
-  worker_thread = std::make_unique<std::thread>([=] {
+  worker_thread = std::unique_ptr<std::thread>(new std::thread([=] {
     perfetto::ThreadTrack thread_track  = perfetto::ThreadTrack::Current();
     perfetto::protos::gen::TrackDescriptor desc = thread_track.Serialize();
     desc.mutable_thread()->set_pid(thread_id);
@@ -143,7 +143,7 @@ void OnNewRequest(size_t request_id) {
 
     // Close the slice for the request now that we finished handling it.
     TRACE_EVENT_END("category", perfetto::Track(request_id));
-  });
+  }));
 }
 
 static void OnPerfettoLogMessage(perfetto::base::LogMessageCallbackArgs args) {
