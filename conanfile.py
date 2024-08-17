@@ -805,7 +805,7 @@ if (false)""")
         return None
 
     def _lib_path_arg(self, path):
-        argname = "LIBPATH:" if self.settings.compiler == "Visual Studio" or self._is_clang_cl() else "L"
+        argname = "LIBPATH:" if self.settings.compiler == "Visual Studio" or self._is_clang_cl else "L"
         return "-{}'{}'".format(argname, path.replace("\\", "/"))
 
     def build(self):
