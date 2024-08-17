@@ -1046,7 +1046,7 @@ if (false)""")
         self.cpp_info.set_property("cmake_file_name", "perfetto")
        # self.cpp_info.set_property("pkg_config_name", "perfetto_full_package")
 
-        lib_prefix = "lib" if (self._is_msvc or self._is_clang_cl) else ""
+        lib_prefix = "lib" if (self._is_msvc or self._is_clang_cl) else "lib"
         #lib_suffix = "d" if self.settings.build_type == "Debug" else ""
         lib_suffix = "" # NOTE: without "d"
         library_suffixes = [".lib", ".dll"] if (self._is_msvc or self._is_clang_cl) else [".so", ".dll.a", ".a"]
