@@ -232,7 +232,7 @@ class PerfettoConan(conan_build_helper.CMakePackage):
         "enable_perfetto_trace_processor_sqlite": None,
         "enable_perfetto_integration_tests": False,
         "skip_buildtools_check": True,
-        "use_custom_libcxx": None,
+        "use_custom_libcxx": False,
         "custom_libcxx_is_static": None,
         "perfetto_build_with_android": None,
         "is_perfetto_build_generator": None,
