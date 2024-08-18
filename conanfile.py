@@ -213,7 +213,7 @@ class PerfettoConan(conan_build_helper.CMakePackage):
         "enable_perfetto_traceconv": None,
         "enable_perfetto_ui": None,
         "perfetto_force_dlog": None,
-        "perfetto_force_dcheck": None,
+        "perfetto_force_dcheck": True,
         "enable_perfetto_stderr_crash_dump": None,
         "enable_perfetto_x64_cpu_opt": None,
         "monolithic_binaries": None,
