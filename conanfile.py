@@ -961,6 +961,7 @@ if (false)""")
                         cmake = CMake(self)
                         cmake.parallel = True
                         cmake.verbose = True
+                        cmake.definitions["DCHECK_ALWAYS_ON"] = True
                         cmake.configure(build_folder=os.path.join(build_subfolder, "examples", "sdk"), source_folder=os.path.join(build_subfolder, "examples", "sdk"), args=['--debug-trycompile'])
                         cpu_count = tools.cpu_count()
                         self.output.info('Detected %s CPUs' % (cpu_count))
